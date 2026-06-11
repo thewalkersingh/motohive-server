@@ -6,13 +6,13 @@ spring:
     name: listing-service
 
   datasource:
-    url: jdbc:mysql://localhost:3306/motohive_listings?useSSL=false&serverTimezone=UTC
+    url: jdbc:mysql://localhost:3306/motohive_listings?useSSL=false&allowPublicKeyRetrieval=true
     username: ${DB_USERNAME:root}
-    password: ${DB_PASSWORD:password}
+    password: ${DB_PASSWORD:admin}
     driver-class-name: com.mysql.cj.jdbc.Driver
     hikari:
       pool-name: ListingServiceHikariPool
-      maximum-pool-size: 15    # listings may have higher load
+      maximum-pool-size: 15
       minimum-idle: 3
 
   jpa:
@@ -29,16 +29,11 @@ spring:
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
-    consumer:
-      group-id: listing-service-group
-      auto-offset-reset: earliest
-      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
-      properties:
-        spring.json.trusted.packages: "com.motohive.*"
 
-# Feign entity config for calling vehicle-service
 motohive:
   services:
     vehicle-service-url: ${VEHICLE_SERVICE_URL:http://localhost:8082}
-    user-service-url: ${USER_SERVICE_URL:http://localhost:8081}
+
+logging:
+  level:
+    com.motohive.listingservice: DEBUG
