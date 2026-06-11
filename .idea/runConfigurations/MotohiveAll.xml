@@ -1,0 +1,7 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="MotohiveAll" type="CompoundRunConfigurationType">
+    <toRun name="ListingServiceApplication" type="SpringBootApplicationConfigurationType" />
+    <toRun name="VehicleServiceApplication" type="SpringBootApplicationConfigurationType" />
+    <method v="2" />
+  </configuration>
+</component>
