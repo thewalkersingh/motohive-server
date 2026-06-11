@@ -1,5 +1,9 @@
 package com.motohive.listingservice.exception;
 
-public class EnquiryNotFoundException {
-
+public class EnquiryNotFoundException extends RuntimeException {
+	
+	public EnquiryNotFoundException(Long id) {
+		super("Enquiry not found with id: " + id);
+	}
+	
 }
