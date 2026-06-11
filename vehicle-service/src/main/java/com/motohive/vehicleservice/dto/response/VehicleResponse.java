@@ -30,6 +30,7 @@ public class VehicleResponse {
 	private VehicleStatus status;
 	private LocalDateTime createdAt;
 	private LocalDateTime updatedAt;
+	
 	// ── Car-specific (null if not CAR) ────────────────
 	private Integer engineCc;
 	private Byte seatingCapacity;
@@ -38,15 +39,18 @@ public class VehicleResponse {
 	private DriveType driveType;
 	private Boolean sunroof;
 	private Boolean abs;
+	
 	// ── Bike-specific (null if not BIKE) ──────────────
 	private BikeType bikeType;
 	private TyreType tyreType;
+	
 	// ── EV-specific (null if not EV) ──────────────────
 	private BigDecimal batteryCapacityKwh;
 	private Integer rangeKm;
 	private BigDecimal chargeTimeHours;
 	private ConnectorType connectorType;
 	private Integer topSpeedKmph;
+	
 	// ── Images ────────────────────────────────────────
 	private List<VehicleImageResponse> images;
 	

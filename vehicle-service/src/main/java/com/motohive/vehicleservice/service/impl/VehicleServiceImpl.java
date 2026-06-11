@@ -27,7 +27,6 @@ public class VehicleServiceImpl implements VehicleService {
 	private final VehicleMapper vehicleMapper;
 	
 	// ── Create ───────────────────────────────────────
-	
 	@Override
 	@Transactional
 	public VehicleResponse createVehicle(CreateVehicleRequest request) {
