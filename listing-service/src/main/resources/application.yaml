@@ -37,7 +37,7 @@ spring:
       properties:
         spring.json.trusted.packages: "com.motohive.*"
 
-# Feign client config for calling vehicle-service
+# Feign entity config for calling vehicle-service
 motohive:
   services:
     vehicle-service-url: ${VEHICLE_SERVICE_URL:http://localhost:8082}
