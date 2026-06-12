@@ -1,4 +1,4 @@
-package com.motohive.apigateway;
+package com.motohive.userservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
