@@ -1,0 +1,227 @@
+motohive/
+├── pom.xml                        ← Parent POM
+├── api-gateway/
+│   ├── pom.xml
+│   └── src/
+├── vehicle-service/
+│   ├── pom.xml
+│   └── src/
+├── user-service/
+│   ├── pom.xml
+│   └── src/
+├── listing-service/
+│   ├── pom.xml
+│   └── src/
+└── payment-service/
+    ├── pom.xml
+    └── src/
+
+
+motohive/                          ← you create this manually
+├── pom.xml                        ← you write this manually (parent POM)
+├── api-gateway/                   ← generated from start.spring.io
+├── user-service/                  ← generated from start.spring.io
+├── vehicle-service/               ← generated from start.spring.io
+├── listing-service/               ← generated from start.spring.io
+└── payment-service/               ← generated from start.spring.io
+
+
+
+Dependencies added
+✅ Spring Web
+✅ Spring Data JPA
+✅ MySQL Driver
+✅ Flyway Migration
+✅ Spring for Apache Kafka
+✅ OpenFeign
+✅ Validation
+✅ Lombok
+✅ Spring Boot DevTools  (optional, for hot reload)
+
+
+-----------------------------------------------
+vehicleservice/
+├── VehicleServiceApplication.java
+├── entity/
+│   ├── Vehicle.java
+│   ├── CarDetails.java
+│   ├── BikeDetails.java
+│   ├── EvDetails.java
+│   └── VehicleImage.java
+├── enums/
+│   ├── VehicleType.java
+│   ├── FuelType.java
+│   ├── Transmission.java
+│   ├── VehicleCondition.java
+│   ├── VehicleStatus.java
+│   ├── DriveType.java
+│   ├── BikeType.java
+│   ├── TyreType.java
+│   └── ConnectorType.java
+├── repository/
+├── service/
+├── controller/
+├── dto/
+└── exception/
+-----------------------------------------------------
+
+listingservice/
+├── ListingServiceApplication.java
+├── entity/
+│   ├── Listing.java
+│   ├── ListingEnquiry.java
+│   └── VehicleExpense.java
+├── enums/
+│   ├── ListingStatus.java
+│   ├── EnquiryStatus.java
+│   └── ExpenseType.java
+├── repository/
+│   ├── ListingRepository.java
+│   ├── ListingEnquiryRepository.java
+│   └── VehicleExpenseRepository.java
+├── client/
+│   └── VehicleClient.java
+├── dto/
+│   ├── request/
+│   │   ├── CreateListingRequest.java
+│   │   ├── UpdateListingRequest.java
+│   │   ├── CreateEnquiryRequest.java
+│   │   └── CreateExpenseRequest.java
+│   └── response/
+│       ├── ListingResponse.java
+│       ├── ListingSummaryResponse.java
+│       ├── EnquiryResponse.java
+│       └── ExpenseResponse.java
+├── mapper/
+│   ├── ListingMapper.java
+│   └── ExpenseMapper.java
+├── service/
+│   ├── ListingService.java
+│   ├── EnquiryService.java
+│   ├── VehicleExpenseService.java
+│   └── impl/
+│       ├── ListingServiceImpl.java
+│       ├── EnquiryServiceImpl.java
+│       └── VehicleExpenseServiceImpl.java
+├── controller/
+│   ├── ListingController.java
+│   ├── EnquiryController.java
+│   └── VehicleExpenseController.java
+└── exception/
+    ├── ListingNotFoundException.java
+    ├── EnquiryNotFoundException.java
+    ├── DuplicateActiveListingException.java
+    ├── GlobalExceptionHandler.java
+    ├── ErrorResponse.java
+    └── ValidationErrorResponse.java
+
+
+Quick API Reference
+MethodURLDescriptionPOST/api/v1/listingsCreate listingGET/api/v1/listings/{id}Get listing with vehicle detailsGET/api/v1/listingsAll active listingsGET/api/v1/listings/seller/{sellerId}Seller's listingsPATCH/api/v1/listings/{id}Update listingDELETE/api/v1/listings/{id}Remove listingPOST/api/v1/enquiriesCreate enquiryGET/api/v1/enquiries/listing/{listingId}Listing enquiriesGET/api/v1/enquiries/buyer/{buyerId}Buyer enquiriesPATCH/api/v1/enquiries/{id}/statusUpdate enquiry statusPOST/api/v1/expensesAdd vehicle expenseGET/api/v1/expenses/vehicle/{vehicleId}Vehicle expensesGET/api/v1/expenses/vehicle/{vehicleId}/totalTotal expense
+
+
+
+userservice/
+├── UserServiceApplication.java
+├── entity/
+│   ├── User.java
+│   ├── UserAddress.java
+│   └── VehicleAppointment.java
+├── enums/
+│   ├── UserStatus.java
+│   ├── Role.java
+│   ├── Gender.java
+│   ├── AppointmentType.java
+│   └── AppointmentStatus.java
+├── repository/
+│   ├── UserRepository.java
+│   ├── UserAddressRepository.java
+│   └── VehicleAppointmentRepository.java
+├── security/
+│   ├── JwtService.java
+│   ├── JwtAuthFilter.java
+│   ├── SecurityConfig.java
+│   └── UserDetailsServiceImpl.java
+├── dto/
+│   ├── request/
+│   │   ├── RegisterRequest.java
+│   │   ├── LoginRequest.java
+│   │   ├── UpdateUserRequest.java
+│   │   ├── AddressRequest.java
+│   │   └── AppointmentRequest.java
+│   └── response/
+│       ├── AuthResponse.java
+│       ├── UserResponse.java
+│       ├── AddressResponse.java
+│       └── AppointmentResponse.java
+├── mapper/
+│   └── UserMapper.java
+├── service/
+│   ├── AuthService.java
+│   ├── UserService.java
+│   ├── AppointmentService.java
+│   └── impl/
+│       ├── AuthServiceImpl.java
+│       ├── UserServiceImpl.java
+│       └── AppointmentServiceImpl.java
+├── controller/
+│   ├── AuthController.java
+│   ├── UserController.java
+│   └── AppointmentController.java
+└── exception/
+    ├── UserNotFoundException.java
+    ├── EmailAlreadyExistsException.java
+    ├── PhoneAlreadyExistsException.java
+    ├── InvalidCredentialsException.java
+    ├── GlobalExceptionHandler.java
+    ├── ErrorResponse.java
+    └── ValidationErrorResponse.java
+
+
+API Quick Reference
+MethodURLAuthDescriptionPOST/api/v1/auth/registerPublicRegister userPOST/api/v1/auth/loginPublicLoginPOST/api/v1/auth/refreshPublicRefresh tokenPOST/api/v1/auth/logoutPublicLogoutGET/api/v1/users/{id}JWTGet user profilePATCH/api/v1/users/{id}JWTUpdate profilePOST/api/v1/users/{id}/addressesJWTAdd addressGET/api/v1/users/{id}/addressesJWTGet addressesPOST/api/v1/users/{id}/rolesJWTAdd rolePOST/api/v1/appointmentsPublicBook appointmentGET/api/v1/appointments/{id}PublicGet appointmentGET/api/v1/appointments/vehicle/{id}PublicVehicle appointmentsPATCH/api/v1/appointments/{id}/statusJWTUpdate status
+
+
+----------------------- Payment-Service ----------------------------
+
+paymentservice/
+├── PaymentServiceApplication.java
+├── entity/
+│   ├── Payment.java
+│   └── PaymentOutbox.java
+├── enums/
+│   ├── PaymentStatus.java
+│   ├── BookingAmountType.java
+│   ├── PaymentMethod.java
+│   └── OutboxStatus.java
+├── repository/
+│   ├── PaymentRepository.java
+│   └── PaymentOutboxRepository.java
+├── kafka/
+│   ├── PaymentEventPublisher.java
+│   └── OutboxScheduler.java
+├── dto/
+│   ├── request/
+│   │   ├── InitiatePaymentRequest.java
+│   │   └── ProcessPaymentRequest.java
+│   └── response/
+│       ├── PaymentResponse.java
+│       └── PaymentSummaryResponse.java
+├── event/
+│   └── PaymentCompletedEvent.java
+├── mapper/
+│   └── PaymentMapper.java
+├── service/
+│   ├── PaymentService.java
+│   └── impl/
+│       └── PaymentServiceImpl.java
+├── controller/
+│   └── PaymentController.java
+├── config/
+│   └── SwaggerConfig.java
+└── exception/
+    ├── PaymentNotFoundException.java
+    ├── InvalidPaymentStateException.java
+    ├── GlobalExceptionHandler.java
+    ├── ErrorResponse.java
+    └── ValidationErrorResponse.java
