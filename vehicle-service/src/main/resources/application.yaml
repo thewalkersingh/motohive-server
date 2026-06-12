@@ -37,6 +37,18 @@ spring:
       properties:
         spring.json.trusted.packages: "com.motohive.*"
 
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+    enabled: true
+  swagger-ui:
+    path: /swagger-ui.html
+    operations-sorter: method       # sorts by GET/POST/PATCH/DELETE
+    tags-sorter: alpha              # sorts controllers alphabetically
+    try-it-out-enabled: true        # enables Try it out by default
+  show-actuator: false
+  paths-to-match: /api/v1/**
+
 logging:
   level:
     com.motohive.vehicleservice: DEBUG
