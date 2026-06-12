@@ -1,5 +1,6 @@
+// enums/PaymentMethod.java
 package com.motohive.paymentservice.enums;
 
-public class PaymentMethod {
-
+public enum PaymentMethod {
+	MOCK, RAZORPAY, STRIPE
 }

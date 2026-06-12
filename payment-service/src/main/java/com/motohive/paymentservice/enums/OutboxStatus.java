@@ -1,5 +1,6 @@
+// enums/OutboxStatus.java
 package com.motohive.paymentservice.enums;
 
-public class OutboxStatus {
-
+public enum OutboxStatus {
+	PENDING, PUBLISHED, FAILED
 }

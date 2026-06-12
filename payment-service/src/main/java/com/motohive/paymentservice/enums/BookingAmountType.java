@@ -1,5 +1,6 @@
+// enums/BookingAmountType.java
 package com.motohive.paymentservice.enums;
 
-public class BookingAmountType {
-
+public enum BookingAmountType {
+	FIXED, PERCENTAGE
 }

@@ -1,5 +1,6 @@
+// enums/PaymentStatus.java
 package com.motohive.paymentservice.enums;
 
-public class PaymentStatus {
-
+public enum PaymentStatus {
+	INITIATED, PROCESSING, SUCCESS, FAILED, REFUNDED
 }

@@ -1,5 +1,10 @@
+// exception/PaymentNotFoundException.java
 package com.motohive.paymentservice.exception;
 
-public class PaymentNotFoundException {
-
+public class PaymentNotFoundException extends RuntimeException {
+	
+	public PaymentNotFoundException(Long id) {
+		super("Payment not found with id: " + id);
+	}
+	
 }
